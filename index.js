@@ -97,7 +97,7 @@ const createRequest = (input, callback) => {
                       Requester.request(config3)
                           .then(response => {
                            const hash = response.data.result.transactionHash
-                            callback(response.status, Requester.success(jobRunID, {data: {result: hash}}))
+                            callback(response.status, Requester.success(jobRunID, {data: {result: true}}))
                           })
                           .catch(error => {
                             callback(200, Requester.success(jobRunID, {data: {result: false}}))
