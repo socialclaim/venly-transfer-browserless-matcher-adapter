@@ -13,7 +13,9 @@ const customParams = {
 const createRequest = (input, callback) => {
   const validator = new Validator(callback, input, customParams)
   const jobRunID = validator.validated.id
-  const walletID = validator.validated.data.walletID
+  const id = validator.validated.data.walletID
+  const walletID = `${id.substring(0, 8)}-${id.substring(8, 12)}-${id.substring(12, 16)}-${id.substring(16, 20)}-${id.substring(20)}`
+
   const recipient = validator.validated.data.recipient
   const serviceURL = `${process.env.BROWSERLESS_URL}/scrape?stealth`
   const loginURL = `${process.env.VUE_APP_VENLY_LOGIN_URL}/auth/realms/Arkane/protocol/openid-connect/token`
