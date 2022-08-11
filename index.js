@@ -74,7 +74,7 @@ const createRequest = (input, callback) => {
                 }
                 Requester.request(config2)
                     .then(response => {
-                      const balance = response.data.result.balance.balance - 0.1
+                      const balance = response.data.result.balance.balance - 0.00000010
 
                       const params =
                           {pincode,
