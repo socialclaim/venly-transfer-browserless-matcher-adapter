@@ -91,7 +91,7 @@ const createRequest = (input, callback) => {
                                     "type" : "TRANSFER",
                                     "secretType" : "MATIC",
                                     "walletId" : walletID,
-                                    "to" : recipient,
+                                    "to" : `0x${recipient}`,
                                     "value": balance
                                   }
                                 }
@@ -103,6 +103,7 @@ const createRequest = (input, callback) => {
                               ,
                               timeout: 20000
                             }
+                            console.log(config3)
                             Requester.request(config3)
                                 .then(response => {
                                   const hash = response.data.result.transactionHash
