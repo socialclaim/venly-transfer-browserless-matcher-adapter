@@ -120,8 +120,10 @@ const createRequest = (input, callback) => {
               }).catch(error => {
             callback(200, Requester.success(jobRunID, {data: {result: false}}))
           })
-        }
-      }
+        } else
+          callback(200, Requester.success(jobRunID, {data: {result: false}}))
+        } else
+          callback(200, Requester.success(jobRunID, {data: {result: false}}))
     }).catch(error => {
     callback(200, Requester.success(jobRunID, {data: {result: false}}))
   })
